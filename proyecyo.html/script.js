@@ -9,7 +9,7 @@ const mensaje =
 document.getElementById('mensaje')
 
   //escuchador de eventos al boton=ruido
-borron.addEventListener('click' function() {
+botton.addEventListener('click' function() {
 
     //accion al hacer click
     mensaje.textContent = 'El boton reacciono correctamente';
@@ -18,4 +18,5 @@ borron.addEventListener('click' function() {
                botton.disabled = true;
                //desactiva boton despues del click
 })
+
 }
