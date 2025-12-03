@@ -1,0 +1,58 @@
+/* Estilos básicos para el cuerpo de la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Estilos para el formulario contenedor */
+.inventario-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Limita el ancho para que no ocupe toda la pantalla */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos para las etiquetas (labels) */
+.inventario-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Estilos para los campos de entrada de texto y número */
+.inventario-form input[type="text"],
+.inventario-form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Asegura que el padding no aumente el ancho total */
+}
+
+/* Estilos para el botón de envío */
+.inventario-form button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto al pasar el mouse por el botón */
+.inventario-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}

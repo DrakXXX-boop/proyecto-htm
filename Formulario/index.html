@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Inventario</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <form class="inventario-form" action="guardar.php" method="POST">
+        
+        <label for="nombre">Nombre (objeto)</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ej: Tornillo M6" required>
+        
+        <label for="funcion">Uso (función)</label>
+        <input type="text" id="funcion" name="funcion" placeholder="Ej: Fijación de cubierta" required>
+
+        <label for="cantidad">Cantidad</label>
+        <input type="number" id="cantidad" name="cantidad" placeholder="Ej: 150" min="0" required>
+        
+        <button type="submit" name="enviar">Guardar inventario</button>
+    </form>
+</body>
+</html>
