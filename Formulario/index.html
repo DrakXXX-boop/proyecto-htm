@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Inventario</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Material</title>
+    <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
-    <form class="inventario-form" action="guardar.php" method="POST">
-        
-        <label for="nombre">Nombre (objeto)</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Ej: Tornillo M6" required>
-        
-        <label for="funcion">Uso (función)</label>
-        <input type="text" id="funcion" name="funcion" placeholder="Ej: Fijación de cubierta" required>
+    <form class="inventario-form" action="guardar_material.php" method="POST">
+        
+        <h2>Registro de Nuevo Material</h2>
+        
+        <label for="nombre">Nombre del Material</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ej: Kit Arduino Uno" required>
+        
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion" name="descripcion" placeholder="Módulo programable para proyectos..." required></textarea>
 
-        <label for="cantidad">Cantidad</label>
-        <input type="number" id="cantidad" name="cantidad" placeholder="Ej: 150" min="0" required>
-        
-        <button type="submit" name="enviar">Guardar inventario</button>
-    </form>
+        <label for="cantidad">Cantidad Inicial</label>
+        <input type="number" id="cantidad" name="cantidad" placeholder="Ej: 50" min="0" required>
+        
+        <label for="id_taller">Taller Asignado</label>
+        <select id="id_taller" name="id_taller" required>
+            <option value="">Selecciona un Taller</option>
+            <option value="1">Taller de Programación (TOPEC)</option>
+            <option value="2">Taller de Mecatrónica (OPEC)</option>
+        </select>
+        
+        <label for="estado">Estado Inicial</label>
+        <select id="estado" name="estado" required>
+            <option value="Disponible">Disponible</option>
+            <option value="En Uso">En Uso</option>
+            <option value="Dañado">Dañado</option>
+        </select>
+        
+        <button type="submit" name="enviar">Guardar Material</button>
+    </form>
 </body>
 </html>
