@@ -1,0 +1,27 @@
+<?php
+include 'conexion.php'; // Incluye tu conexión
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    $nombre = $conexion->real_escape_string($_POST['nombre']);
+    $puesto = $conexion->real_escape_string($_POST['puesto']);
+    
+    $sql = "INSERT INTO Personal (nombre, puesto) 
+            VALUES ('$nombre', '$puesto')";
+
+    if ($conexion->query($sql) === TRUE) {
+        echo "<h1> ¡Personal registrado con éxito!</h1>";
+        echo "<p>Se ha registrado a '<strong>$nombre</strong>' con el puesto de $puesto.</p>";
+        echo "<br><a href='registro_personal.html'>Registrar más Personal</a>";
+        echo "<br><a href='menu_principal.html'>Volver al Menú</a>";
+    } else {
+        echo "<h1> Error al registrar el Personal</h1>";
+        echo "<p>Detalles del error: " . $conexion->error . "</p>";
+        echo "<br><a href='registro_personal.html'>Volver al formulario</a>";
+    }
+
+    $conexion->close();
+} else {
+    echo "Acceso no permitido.";
+}
+?>
