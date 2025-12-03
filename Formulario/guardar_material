@@ -1,0 +1,32 @@
+<?php
+// Incluye el archivo de conexión (conexion.php)
+include 'conexion.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    // 1. Recuperar y limpiar los datos del formulario
+    $nombre = $conexion->real_escape_string($_POST['nombre']);
+    $descripcion = $conexion->real_escape_string($_POST['descripcion']);
+    $cantidad = (int)$_POST['cantidad'];
+    $id_taller = (int)$_POST['id_taller']; // Debe ser un INT que existe en la tabla Taller
+    $estado = $conexion->real_escape_string($_POST['estado']); 
+    
+    // 2. Consulta SQL para INSERTAR datos en la tabla MATERIAL
+    $sql = "INSERT INTO Material (nombre, descripcion, cantidad, id_taller, estado) 
+            VALUES ('$nombre', '$descripcion', $cantidad, $id_taller, '$estado')";
+
+    if ($conexion->query($sql) === TRUE) {
+        echo "<h1>✅ ¡Material registrado con éxito!</h1>";
+        echo "<p>El material '<strong>$nombre</strong>' ha sido añadido al inventario.</p>";
+        echo "<br><a href='index.html'>Volver al formulario de Material</a>";
+    } else {
+        echo "<h1>❌ Error al guardar el material</h1>";
+        echo "<p>Detalles del error: " . $conexion->error . "</p>";
+        echo "<br><a href='index.html'>Volver al formulario</a>";
+    }
+
+    $conexion->close();
+} else {
+    echo "Acceso no permitido.";
+}
+?>
