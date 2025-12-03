@@ -2,7 +2,7 @@
 $servidor = "localhost"; 
 $usuario = "root";
 $password = ""; 
-$base_de_datos = "inventario_db"; // ¡El nombre de tu DB debe ser este!
+$base_de_datos = "inventario_db";
 
 $conexion = new mysqli($servidor, $usuario, $password, $base_de_datos);
 
